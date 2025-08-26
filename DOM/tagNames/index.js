@@ -5,23 +5,26 @@ function byTagName(node, string) {
             fin.push(node);
         }
     }
-    let children = Array.from(node.children);
-    for(let child of children) {
-        if(child.childNodes) {
-            let kids = Array.from(child.children);
-            for(let kid of kids) {
+
+    for(let child of node.children) {
+            checkNode(child)
+        if(child.children) {
+            for(let kid of child.children) {
                 checkNode(kid);
             }
         }
-        else {
-            checkNode(child);
-        }
     }
+
+    return fin;
 }
 
 
 
 
-  console.log(byTagName(document.body, "h1"));
+  console.log(byTagName(document.body, "h1").length);
   // → 1
- 
+  console.log(byTagName(document.body, "span").length);
+  // → 3
+  let para = document.querySelector("p");
+  console.log(byTagName(para, "span").length);
+  // → 2
