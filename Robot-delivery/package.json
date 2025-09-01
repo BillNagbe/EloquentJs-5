@@ -1,0 +1,12 @@
+{
+  "name": "robot-delivery",
+  "version": "1.0.0",
+  "description": "eloquent js robot project",
+  "license": "MIT",
+  "author": "Bill Nagbe",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
